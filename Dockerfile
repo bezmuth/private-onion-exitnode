@@ -1,15 +1,16 @@
-ARG TSVERSION=1.40.1
+ARG TSVERSION=1.86.2
 ARG TSFILE=tailscale_${TSVERSION}_amd64.tgz
 
 FROM alpine:latest as build
 ARG TSFILE
 WORKDIR /app
 
+RUN apk --no-cache add wget
 RUN wget https://pkgs.tailscale.com/stable/${TSFILE} && \
   tar xzf ${TSFILE} --strip-components=1
 
 
-FROM alpine:3.18
+FROM alpine:3.22.1
 
 RUN apk --no-cache add \
       tor \
