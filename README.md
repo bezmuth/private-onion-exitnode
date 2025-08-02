@@ -40,5 +40,5 @@ to make sure DNS is redirected
 $ podman exec tornode /app/dns.sh
 ```
 
-Note: this is experimental. Tor is not supposed to be used this way.
+Note: this is experimental. Tor is not supposed to be used this way. Also works with docker and compose.
 
