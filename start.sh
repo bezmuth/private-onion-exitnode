@@ -11,6 +11,7 @@ fi
 
 until /app/tailscale up \
     --authkey=${TAILSCALE_AUTH_KEY} \
+    --login-server=${TAILSCALE_LOGIN_SERVER} \
     --hostname=tornode \
     --advertise-exit-node \
     --accept-dns=false \
